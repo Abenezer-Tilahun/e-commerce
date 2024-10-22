@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <h1>E-commerce Website in JS</h1>
+      <h1 className="text-danger">E-commerce Website in JS</h1>
     </>
   );
 }
