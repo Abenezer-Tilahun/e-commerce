@@ -9,4 +9,21 @@
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f4f4f4;
+  font-size: 25px;
+}
+
+.bg-blue {
+  background-color: #233a95;
+}
+
+.headerWrapper .toptop-strip {
+  background-color: #6a1b9a;
+  padding: 8px 0;
+}
+
+.headerWrapper .top-strip p {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
 }
