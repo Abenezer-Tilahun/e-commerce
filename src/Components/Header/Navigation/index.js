@@ -32,32 +32,42 @@ const Navigation = () => (
           <ul className="list list-inline w-100">
             <li className="list-inline-item">
               <Link to="/" className="d-flex align-items-center">
-                <CiHome />
+                <Button>
+                  <CiHome />
                 &nbsp;Home
+                </Button>
               </Link>
             </li>
             <li className="list-inline-item">
               <Link to="/" className="d-flex align-items-center">
-                <img src={Fashion} alt="Fashion" className="nav-icon" />
-                <span className="ml-2">Fashion</span>
+                <Button>
+                  <img src={Fashion} alt="Fashion" className="nav-icon" />
+                  <span className="ml-2">Fashion</span>
+                </Button>
               </Link>
             </li>
             <li className="list-inline-item">
               <Link to="/" className="d-flex align-items-center">
-                <img src={Electronics} alt="Electronics" className="nav-icon" />
-                <span className="ml-2">Electronics</span>
+                <Button>
+                  <img src={Electronics} alt="Electronics" className="nav-icon" />
+                  <span className="ml-2">Electronics</span>
+                </Button>
               </Link>
             </li>
             <li className="list-inline-item">
               <Link to="/" className="d-flex align-items-center">
-                <img src={Bags} alt="Bags" className="nav-icon" />
-                <span className="ml-2">Bags</span>
+                <Button>
+                  <img src={Bags} alt="Bags" className="nav-icon" />
+                  <span className="ml-2">Bags</span>
+                </Button>
               </Link>
             </li>
             <li className="list-inline-item">
               <Link to="/" className="d-flex align-items-center">
-                <img src={Groceries} alt="Groceries" className="nav-icon" />
-                <span className="ml-2">Groceries</span>
+                <Button>
+                  <img src={Groceries} alt="Groceries" className="nav-icon" />
+                  <span className="ml-2">Groceries</span>
+                </Button>
               </Link>
             </li>
           </ul>
