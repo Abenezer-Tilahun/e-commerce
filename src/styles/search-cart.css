@@ -1,0 +1,30 @@
+.cartTab button svg {
+  color: #ea2b0f !important;
+}
+
+.cartTab button {
+  background: #fff1ee !important;
+}
+
+.cartTab .circle {
+  margin-left: 10px; /* Added space between price and cart icon */
+}
+
+.cartTab .price {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  white-space: nowrap;
+  margin-right: 10px; /* Added space between price and cart icon */
+}
+
+.cartTab .count {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  background: #ea2b0f;
+  border-radius: 50%;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,27 @@
+/* Hide the submenu by default */
+.sidebarNav ul li .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Show the submenu on hover */
+.sidebarNav ul li:hover .submenu {
+  display: block;
+}
+
+/* Additional styling for the submenu */
+.sidebarNav ul li .submenu a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sidebarNav ul li .submenu a button {
+  width: 100%;
+  text-align: left;
+}

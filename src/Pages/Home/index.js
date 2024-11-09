@@ -1,6 +1,14 @@
+import React from 'react';
+import ProductCard from './ProductCard';
+
 const Home = () => (
-  <>
-    <h1>Home</h1>
-  </>
+  <div className="container mt-4">
+    <div className="row">
+      <div className="col-md-12">
+        <ProductCard />
+      </div>
+    </div>
+  </div>
 );
+
 export default Home;

@@ -1,0 +1,202 @@
+nav .navPart2 ul li a svg {
+  font-size: 20px;
+}
+
+nav .allCatTab .icon1 svg {
+  font-size: 20px !important;
+}
+
+nav .allCatTab .icon2 svg {
+  font-size: 15px !important;
+}
+
+nav .navPart1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .allCatTab {
+  display: flex;
+  align-items: center;
+  background-color: #ffa500;
+  padding: 10px 15px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px; /* Add spacing if needed */
+}
+
+nav .allCatTab * {
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+nav .allCatTab:hover {
+  background-color: #2bbef9;
+}
+
+nav .allCatTab .text {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+nav .navPart2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .navPart2 ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+nav .navPart2 ul li {
+  list-style: none;
+  margin-right: 20px;
+  position: relative;
+}
+
+nav .navPart2 ul li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  transition: all  0.2s ease-in-out;
+}
+
+nav .navPart2 ul li a button {
+  font-size: 15px !important;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  transition: all  0.2s ease-in-out;
+  border-radius: 25px;
+}
+
+nav .navPart2 ul li a:hover {
+  background: #f0faff;
+  color: #ffa500;
+}
+
+nav .navPart2 ul li .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #f0faff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 999; /* Ensure submenu is on top */
+}
+
+/* Hover effect to show the submenu */
+nav .navPart2 ul li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Submenu item styling */
+nav .navPart2 ul li .submenu a {
+  display: block;
+  padding: 10px 15px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav .navPart2 ul li .submenu a:hover {
+  background-color: #ffa500;
+  color: #fff;
+}
+
+.nav-icon {
+  width: 24px; /* Adjust the size as needed */
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Wrapper Position */
+nav .navPart1 .catWrapper {
+  position: relative;
+}
+
+/* Sidebar Styles */
+nav .navPart1 .catWrapper .sidebarNav {
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  background: #fff;
+  position: absolute;
+  top: 136%;
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 999; /* Ensures the sidebar is in front */
+}
+
+/* When Open */
+nav .navPart1 .catWrapper .sidebarNav.open {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* List Item Styles */
+nav .navPart1 .catWrapper .sidebarNav ul li {
+  position: static;
+  width: 100%;
+  list-style: none;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li .submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 250px;
+  height: auto;
+  background: #fff;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu {
+  opacity: 1;
+  visibility: inherit;
+  left: 100%;
+}
+
+/* Button Styles */
+nav .navPart1 .catWrapper .sidebarNav ul li button {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  justify-content: flex-start !important;
+  text-transform: capitalize !important;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Button Hover Effect */
+nav .navPart1 .catWrapper .sidebarNav ul li button:hover {
+  background-color: #ffa500;
+  color: #fff;
+  cursor: pointer; /* Show pointer on hover */
+}
