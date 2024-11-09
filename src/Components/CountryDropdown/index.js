@@ -17,7 +17,7 @@ const CountryDropdown = () => {
       <Button className="countryDrop" onClick={() => setIsOpenModal(true)}>
         <div className="info d-flex flex-column">
           <span className="label">Your Location</span>
-          <span className="name">Ethiopia</span>
+          <span className="name">Select a Location</span>
         </div>
         <span className="ml-auto"><FaAngleDown /></span>
       </Button>
