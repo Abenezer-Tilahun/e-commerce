@@ -1,17 +1,42 @@
+/* eslint-disable import/no-cycle */
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { FaAngleDown } from 'react-icons/fa6';
 import Dialog from '@mui/material/Dialog';
 import { IoSearch } from 'react-icons/io5';
 import { MdClose } from 'react-icons/md';
 import Slide from '@mui/material/Slide';
+import { MyContext } from '../../App';
 
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 Transition.displayName = 'Transition'; // Adding displayName
 
 const CountryDropdown = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [selectedTab, setselectedTab] = useState(null);
+
+  // const [countryList, setcountryList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+  const context = useContext(MyContext);
+
+  const selectCountry = (index) => {
+    setselectedTab(index);
+    // alert(`Selected Country: ${index}`);
+    setIsOpenModal(false);
+  };
+
+  useEffect(() => {
+    setFilteredList(context.countryList);
+  }, [context.countryList]);
+
+  const filterList = (e) => {
+    const keyword = e.target.value.toLowerCase();
+
+    const list = context.countryList.filter((item) => item.country.toLowerCase().includes(keyword));
+    setFilteredList(list);
+  };
+
   return (
     <>
       <Button className="countryDrop" onClick={() => setIsOpenModal(true)}>
@@ -28,10 +53,25 @@ const CountryDropdown = () => {
         <Button className="closeBtn" onClick={() => setIsOpenModal(false)}><MdClose /></Button>
         <div className="headerSearch w-100">
           <Button className="searchBtn"><IoSearch /></Button>
-          <input type="text" placeholder="Search Your Area..." />
+          <input type="text" placeholder="Search Your Area..." onChange={filterList} />
         </div>
         <ul className="countryList mt-3">
-          <li><Button onClick={() => setIsOpenModal(true)}>Dire Dawa</Button></li>
+          {filteredList.length !== 0 ? (
+            filteredList.map((item) => (
+              <li key={item.country}>
+                <Button
+                  onClick={() => selectCountry(item.country)}
+                  className={`${selectedTab === item.country ? 'active' : ''}`}
+                >
+                  {item.country}
+                </Button>
+              </li>
+            ))
+          ) : (
+            <li>No results found.</li>
+          )}
+          {
+          /*
           <li><Button onClick={() => setIsOpenModal(true)}>Harar</Button></li>
           <li><Button onClick={() => setIsOpenModal(true)}>Hawassa</Button></li>
           <li><Button onClick={() => setIsOpenModal(true)}>Addis Ababa</Button></li>
@@ -43,6 +83,8 @@ const CountryDropdown = () => {
           <li><Button onClick={() => setIsOpenModal(true)}>Bonga</Button></li>
           <li><Button onClick={() => setIsOpenModal(true)}>Gambela</Button></li>
           <li><Button onClick={() => setIsOpenModal(true)}>Semera</Button></li>
+          */
+          }
         </ul>
       </Dialog>
     </>

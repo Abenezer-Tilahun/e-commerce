@@ -18,14 +18,11 @@ const Navigation = () => {
   const buttonRef = useRef(null);
   const categoryLinksRef = useRef([]);
 
-  // Store the category link references properly (avoid directly assigning inside JSX)
   useEffect(() => {
     categoryLinksRef.current = categoryLinksRef.current.slice(0, 5); // Ensure correct array length
   }, []);
 
-  // Close the sidebar when clicking outside of it, but not on category links
   const handleClickOutside = (event) => {
-    // Check if the click is outside the sidebar and button
     if (
       sidebarRef.current
       && !sidebarRef.current.contains(event.target)
@@ -33,25 +30,27 @@ const Navigation = () => {
       && !buttonRef.current.contains(event.target)
       && !categoryLinksRef.current.some((link) => link && link.contains(event.target))
     ) {
-      setIsOpenSidebar(false); // Close the sidebar
+      setIsOpenSidebar(false);
     }
   };
 
-  // Add event listener for clicks outside the sidebar
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
-  // Assign refs to the category links after render (not directly inside JSX)
   const setCategoryLinkRef = (el, index) => {
     if (el) {
       categoryLinksRef.current[index] = el;
     }
+  };
+
+  // Handle category click to toggle submenu
+  const handleCategoryClick = (index) => {
+    setActiveMenuIndex(activeMenuIndex === index ? null : index);
   };
 
   return (
@@ -60,7 +59,6 @@ const Navigation = () => {
         <div className="row">
           <div className="col-sm-3 navPart1 d-flex align-items-center">
             <div className="catWrapper">
-              {/* Toggle Sidebar Visibility */}
               <Button
                 ref={buttonRef}
                 className="allCatTab d-flex align-items-center justify-content-between"
@@ -71,69 +69,72 @@ const Navigation = () => {
                 <span className="icon2 ms-2"><FaAngleDown /></span>
               </Button>
 
-              {/* Sidebar Navigation */}
               <div
                 ref={sidebarRef}
                 className={`sidebarNav shadow ${isOpenSidebar ? 'open' : ''}`}
               >
-                <ul>
-                  <li>
-                    <Link to="/"><Button onClick={() => setActiveMenuIndex(activeMenuIndex === 0 ? null : 0)}>Test 1</Button></Link>
-                    <div className={`submenu shadow ${activeMenuIndex === 0 ? 'show' : ''}`}>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                    </div>
-                  </li>
-                  <li>
-                    <Link to="/"><Button onClick={() => setActiveMenuIndex(activeMenuIndex === 1 ? null : 0)}>Test 2</Button></Link>
-                    <div className={`submenu shadow ${activeMenuIndex === 1 ? 'show' : ''}`}>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                    </div>
-                  </li>
-                  <li>
-                    <Link to="/"><Button onClick={() => setActiveMenuIndex(activeMenuIndex === 2 ? null : 0)}>Test 3</Button></Link>
-                    <div className={`submenu shadow ${activeMenuIndex === 2 ? 'show' : ''}`}>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                    </div>
-                  </li>
-                  <li>
-                    <Link to="/"><Button onClick={() => setActiveMenuIndex(activeMenuIndex === 3 ? null : 0)}>Test 4</Button></Link>
-                    <div className={`submenu shadow ${activeMenuIndex === 3 ? 'show' : ''}`}>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                    </div>
-                  </li>
-                  <li>
-                    <Link to="/"><Button onClick={() => setActiveMenuIndex(activeMenuIndex === 4 ? null : 0)}>Test 5</Button></Link>
-                    <div className={`submenu shadow ${activeMenuIndex === 4 ? 'show' : ''}`}>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                      <Link to="/"><Button>Sub Menu Test 1</Button></Link>
-                    </div>
-                  </li>
-                </ul>
+                <nav>
+                  <ul>
+                    <li>
+                      <Link to="/">
+                        <Button onClick={() => handleCategoryClick(0)}>Test 1</Button>
+                      </Link>
+                      <div className={`submenu shadow ${activeMenuIndex === 0 ? 'open' : ''}`}>
+                        <Link to="/"><Button>Sub Menu Test 1</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 2</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 3</Button></Link>
+                      </div>
+                    </li>
+                    <li>
+                      <Link to="/">
+                        <Button onClick={() => handleCategoryClick(1)}>Test 2</Button>
+                      </Link>
+                      <div className={`submenu shadow ${activeMenuIndex === 1 ? 'open' : ''}`}>
+                        <Link to="/"><Button>Sub Menu Test 1</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 2</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 3</Button></Link>
+                      </div>
+                    </li>
+                    <li>
+                      <Link to="/">
+                        <Button onClick={() => handleCategoryClick(2)}>Test 3</Button>
+                      </Link>
+                      <div className={`submenu shadow ${activeMenuIndex === 2 ? 'open' : ''}`}>
+                        <Link to="/"><Button>Sub Menu Test 1</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 2</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 3</Button></Link>
+                      </div>
+                    </li>
+                    <li>
+                      <Link to="/">
+                        <Button onClick={() => handleCategoryClick(3)}>Test 4</Button>
+                      </Link>
+                      <div className={`submenu shadow ${activeMenuIndex === 3 ? 'open' : ''}`}>
+                        <Link to="/"><Button>Sub Menu Test 1</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 2</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 3</Button></Link>
+                      </div>
+                    </li>
+                    <li>
+                      <Link to="/">
+                        <Button onClick={() => handleCategoryClick(4)}>Test 5</Button>
+                      </Link>
+                      <div className={`submenu shadow ${activeMenuIndex === 4 ? 'open' : ''}`}>
+                        <Link to="/"><Button>Sub Menu Test 1</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 2</Button></Link>
+                        <Link to="/"><Button>Sub Menu Test 3</Button></Link>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
+
           <div className="col-sm-9 navPart2 d-flex align-items-center">
             <ul className="list list-inline w-100">
               <li className="list-inline-item">
-                <Link
-                  to="/"
-                  className="d-flex align-items-center"
-                  ref={(el) => setCategoryLinkRef(el, 0)}
-                >
+                <Link to="/" className="d-flex align-items-center" ref={(el) => setCategoryLinkRef(el, 0)}>
                   <Button>
                     <CiHome />
                     &nbsp;Home
@@ -142,17 +143,10 @@ const Navigation = () => {
                 <div className="submenu shadow">
                   <Link to="/"><Button>Test 1</Button></Link>
                   <Link to="/"><Button>Test 2</Button></Link>
-                  <Link to="/"><Button>Test 3</Button></Link>
-                  <Link to="/"><Button>Test 4</Button></Link>
-                  <Link to="/"><Button>Test 5</Button></Link>
                 </div>
               </li>
               <li className="list-inline-item">
-                <Link
-                  to="/"
-                  className="d-flex align-items-center"
-                  ref={(el) => setCategoryLinkRef(el, 1)}
-                >
+                <Link to="/" className="d-flex align-items-center" ref={(el) => setCategoryLinkRef(el, 1)}>
                   <Button>
                     <img src={Fashion} alt="Fashion" className="nav-icon" />
                     <span className="ml-2">Fashion</span>
@@ -161,17 +155,10 @@ const Navigation = () => {
                 <div className="submenu shadow">
                   <Link to="/"><Button>Test 1</Button></Link>
                   <Link to="/"><Button>Test 2</Button></Link>
-                  <Link to="/"><Button>Test 3</Button></Link>
-                  <Link to="/"><Button>Test 4</Button></Link>
-                  <Link to="/"><Button>Test 5</Button></Link>
                 </div>
               </li>
               <li className="list-inline-item">
-                <Link
-                  to="/"
-                  className="d-flex align-items-center"
-                  ref={(el) => setCategoryLinkRef(el, 2)}
-                >
+                <Link to="/" className="d-flex align-items-center" ref={(el) => setCategoryLinkRef(el, 2)}>
                   <Button>
                     <img src={Electronics} alt="Electronics" className="nav-icon" />
                     <span className="ml-2">Electronics</span>
@@ -180,17 +167,10 @@ const Navigation = () => {
                 <div className="submenu shadow">
                   <Link to="/"><Button>Test 1</Button></Link>
                   <Link to="/"><Button>Test 2</Button></Link>
-                  <Link to="/"><Button>Test 3</Button></Link>
-                  <Link to="/"><Button>Test 4</Button></Link>
-                  <Link to="/"><Button>Test 5</Button></Link>
                 </div>
               </li>
               <li className="list-inline-item">
-                <Link
-                  to="/"
-                  className="d-flex align-items-center"
-                  ref={(el) => setCategoryLinkRef(el, 3)}
-                >
+                <Link to="/" className="d-flex align-items-center" ref={(el) => setCategoryLinkRef(el, 3)}>
                   <Button>
                     <img src={Bags} alt="Bags" className="nav-icon" />
                     <span className="ml-2">Bags</span>
@@ -199,17 +179,10 @@ const Navigation = () => {
                 <div className="submenu shadow">
                   <Link to="/"><Button>Test 1</Button></Link>
                   <Link to="/"><Button>Test 2</Button></Link>
-                  <Link to="/"><Button>Test 3</Button></Link>
-                  <Link to="/"><Button>Test 4</Button></Link>
-                  <Link to="/"><Button>Test 5</Button></Link>
                 </div>
               </li>
               <li className="list-inline-item">
-                <Link
-                  to="/"
-                  className="d-flex align-items-center"
-                  ref={(el) => setCategoryLinkRef(el, 4)}
-                >
+                <Link to="/" className="d-flex align-items-center" ref={(el) => setCategoryLinkRef(el, 4)}>
                   <Button>
                     <img src={Groceries} alt="Groceries" className="nav-icon" />
                     <span className="ml-2">Groceries</span>
@@ -218,9 +191,6 @@ const Navigation = () => {
                 <div className="submenu shadow">
                   <Link to="/"><Button>Test 1</Button></Link>
                   <Link to="/"><Button>Test 2</Button></Link>
-                  <Link to="/"><Button>Test 3</Button></Link>
-                  <Link to="/"><Button>Test 4</Button></Link>
-                  <Link to="/"><Button>Test 5</Button></Link>
                 </div>
               </li>
             </ul>

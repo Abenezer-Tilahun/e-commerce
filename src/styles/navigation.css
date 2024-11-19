@@ -43,8 +43,12 @@ nav .allCatTab .text {
 
 nav .navPart2 {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 15px;
+  background: #f8f8f8; /* Optional background color */
+  transition: all 0.3s ease;
 }
 
 nav .navPart2 ul {

@@ -35,6 +35,14 @@
   outline: none;
 }
 
+.locationModal .countryList li button:hover {
+  background: #f1f1f1 !important;
+}
+
+.locationModal .countryList li button:active {
+  background: #e2e2e2 !important;
+}
+
 .locationModal .closeBtn {
   position: absolute;
   top: 10px;
