@@ -15,10 +15,15 @@ export const MyContext = createContext();
 
 function App() {
   const [countryList, setCountryList] = useState();
+  const [selectedCountry, setselectedCountry] = useState('');
 
   const getCountry = async (url) => {
     await axios.get(url).then((res) => {
-      setCountryList(res.data.data);
+      const countries = res.data.data.map((item) => ({
+        country: item.country, // Extract the country name
+        cities: item.cities, // Store cities for possible later use
+      }));
+      setCountryList(countries);
     });
   };
 
@@ -26,7 +31,7 @@ function App() {
     getCountry('https://countriesnow.space/api/v0.1/countries/');
   }, []);
 
-  const values = { countryList };
+  const values = { countryList, setselectedCountry, selectedCountry };
   return (
     <BrowserRouter>
       <MyContext.Provider value={values}>

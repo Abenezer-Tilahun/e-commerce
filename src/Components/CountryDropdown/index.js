@@ -20,10 +20,10 @@ const CountryDropdown = () => {
   const [filteredList, setFilteredList] = useState([]);
   const context = useContext(MyContext);
 
-  const selectCountry = (index) => {
-    setselectedTab(index);
-    // alert(`Selected Country: ${index}`);
-    setIsOpenModal(false);
+  const selectCountry = (country) => {
+    setselectedTab(country); // Highlight the selected country
+    context.setselectedCountry(country); // Update the selected country in context
+    setIsOpenModal(false); // Close the modal
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const CountryDropdown = () => {
       <Button className="countryDrop" onClick={() => setIsOpenModal(true)}>
         <div className="info d-flex flex-column">
           <span className="label">Your Location</span>
-          <span className="name">Select a Location</span>
+          <span className="name">{context.selectedCountry !== '' ? context.selectedCountry : 'Select a Location'}</span>
         </div>
         <span className="ml-auto"><FaAngleDown /></span>
       </Button>
