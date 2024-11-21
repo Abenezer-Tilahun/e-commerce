@@ -1,0 +1,80 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch; /* Ensures all items in the row have equal height */
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is spaced evenly */
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 15px;
+  text-align: left;
+  height: 100%; /* Ensures cards stretch to match the tallest one */
+  background-color: #fff; /* Adds a clean white background for cards */
+}
+
+.product-image {
+  width: 100%;
+  height: 150px; /* Fixed height */
+  background-size: contain; /* Ensures the entire image is visible */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #eaeaea; /* Slightly darker background */
+  border-radius: 8px;
+  margin-bottom: 15px; /* Adds space below the image */
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.pricing {
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 10px;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}

@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <script>
+      (function() {
+        var themeColor = '#000000';
+        var metaTag = document.createElement('meta');
+        metaTag.name = 'theme-color';
+        metaTag.content = themeColor;
+        document.head.appendChild(metaTag);
+      })();
+    </script>
     <meta
       name="description"
       content="Web site created using create-react-app"

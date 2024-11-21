@@ -1,0 +1,16 @@
+.btn-warning {
+  background-color: #ff9800;
+  border: none;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btnCard {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  margin-right: 10px;
+}

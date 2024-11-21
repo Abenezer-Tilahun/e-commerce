@@ -1,0 +1,57 @@
+.locationModal .closeBtn svg {
+  font-size: 22px;
+}
+
+.locationModal .MuiPaper-root {
+  padding: 25px;
+  position: relative;
+}
+
+.locationModal .countryList {
+  margin-bottom: 0;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.locationModal .countryList li {
+  width: 100%;
+  list-style: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.locationModal .countryList li button {
+  width: 100%;
+  text-transform: capitalize !important;
+  justify-content: flex-start !important;
+  padding: 10px 20px !important;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.locationModal .countryList li button:hover {
+  background: #f1f1f1 !important;
+}
+
+.locationModal .countryList li button:active {
+  background: #e2e2e2 !important;
+}
+
+.locationModal .closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #000 !important;
+  cursor: pointer;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}

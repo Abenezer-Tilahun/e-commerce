@@ -1,10 +1,46 @@
+/* eslint-disable import/no-cycle */
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from 'react-router-dom';
+import axios from 'axios';
+import Home from './Pages/Home';
+import Header from './Components/Header';
+
+export const MyContext = createContext();
 
 function App() {
+  const [countryList, setCountryList] = useState();
+  const [selectedCountry, setselectedCountry] = useState('');
+
+  const getCountry = async (url) => {
+    await axios.get(url).then((res) => {
+      const countries = res.data.data.map((item) => ({
+        country: item.country, // Extract the country name
+        cities: item.cities, // Store cities for possible later use
+      }));
+      setCountryList(countries);
+    });
+  };
+
+  useEffect(() => {
+    getCountry('https://countriesnow.space/api/v0.1/countries/');
+  }, []);
+
+  const values = { countryList, setselectedCountry, selectedCountry };
   return (
-    <>
-      <h1>E-commerce Website in JS</h1>
-    </>
+    <BrowserRouter>
+      <MyContext.Provider value={values}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </MyContext.Provider>
+    </BrowserRouter>
   );
 }
 
