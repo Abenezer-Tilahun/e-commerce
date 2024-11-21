@@ -37,12 +37,22 @@ const CountryDropdown = () => {
     setFilteredList(list);
   };
 
+  const getDisplayName = () => {
+    if (context.selectedCountry === '') {
+      return 'Select a Location';
+    }
+    if (context.selectedCountry.length > 10) {
+      return `${context.selectedCountry.substr(0, 10)}...`;
+    }
+    return context.selectedCountry;
+  };
+
   return (
     <>
       <Button className="countryDrop" onClick={() => setIsOpenModal(true)}>
         <div className="info d-flex flex-column">
           <span className="label">Your Location</span>
-          <span className="name">{context.selectedCountry !== '' ? context.selectedCountry : 'Select a Location'}</span>
+          <span className="name">{getDisplayName()}</span>
         </div>
         <span className="ml-auto"><FaAngleDown /></span>
       </Button>

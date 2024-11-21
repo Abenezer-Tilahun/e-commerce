@@ -1,0 +1,84 @@
+/* src/components/FeaturedProducts.css */
+.featured-products {
+  margin: 50px 0;
+}
+
+.featured-products h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.featured-products p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.feature-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.feature-product-card {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  height: 250px; /* Set a fixed height for the cards */
+  text-align: left; /* Align text to the left */
+}
+
+.feature-product-card img {
+  width: 100px; /* Set a fixed width for the image */
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px; /* Add spacing between image and text */
+}
+
+.feature-product-grid-invite {
+  text-align: center;
+  margin-top: 30px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 250px; /* Set a fixed height for the cards */
+}
+
+.feature-product-grid-invite img {
+  width: 450px; /* Set a fixed width for the image */
+  height: 250px;
+  border-radius: 8px;
+}
+
+.feature-product-card h3 {
+  font-size: 1.2rem;
+  margin-top: 0; /* Remove extra top margin */
+  font-weight: bold;
+}
+
+.feature-product-card p {
+  color: #777;
+  margin-top: 10px; /* Space out the description from the title */
+}
+
+.cta-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background-color: #ff6347;
+}

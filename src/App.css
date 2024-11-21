@@ -5,6 +5,10 @@
 @import '../src/styles/search-cart.css';
 @import '../src/styles/sidebar.css';
 @import '../src/styles/country-location.css';
+@import '../src/styles/categories.css';
+@import '../src/styles/productlist.css';
+@import '../src/styles/FeaturedProducts.css';
+@import '../src/styles/Footer.css';
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {

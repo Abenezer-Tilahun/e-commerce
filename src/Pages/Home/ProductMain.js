@@ -7,7 +7,7 @@ import Laptop1 from '../../assets/images/Laptop 1.jpg';
 import Laptop2 from '../../assets/images/Laptop 2.jpg';
 import Laptop3 from '../../assets/images/Laptop 3.jpg';
 
-const ProductCard = () => (
+const ProductMain = () => (
   <Container fluid className="py-9">
     <Row className="justify-content-center">
       <Col md={12}>
@@ -72,4 +72,4 @@ const ProductCard = () => (
   </Container>
 );
 
-export default ProductCard;
+export default ProductMain;

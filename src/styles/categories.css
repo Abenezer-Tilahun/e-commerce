@@ -1,0 +1,94 @@
+/* Overall container for category list */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.featured-categories {
+  width: 312px;
+  height: 39px;
+  top: 635px; /* Position from the top */
+  left: 85px; /* Position from the left */
+  font-family: 'Inter', sans-serif; /* Ensure you're using the Inter font */
+  font-weight: 500; /* Set font weight to 500 */
+  font-size: 32px; /* Font size */
+  line-height: 38.73px; /* Line height */
+  color: #333; /* Default color (adjust as needed) */
+  margin-bottom: 20px; /* Add space between title and categories */
+}
+
+/* Individual category card styling */
+.category-card {
+  background-color: #f8d7a1; /* Light orange background */
+  border-radius: 50%; /* Make the entire card a circle */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px;
+  text-align: center;
+  width: 150px; /* Fixed size for cards (adjust for circular shape) */
+  height: 150px; /* Equal height and width to form a circle */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Category image styling */
+.category-card img {
+  width: 80px; /* Adjust image size */
+  height: 80px; /* Keep it proportional to the card size */
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensures the image covers the area */
+  margin-bottom: 10px;
+}
+
+/* Category name styling */
+.category-card p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* Hover effect */
+.category-card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .category-card {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 150px; /* Adjust height to keep the card circular */
+    padding: 15px;
+  }
+
+  .category-card img {
+    width: 60px; /* Adjust image size for smaller screens */
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    width: 120px; /* Further adjustment for very small screens */
+    height: 120px;
+    padding: 10px;
+  }
+
+  .category-card img {
+    width: 50px; /* Further adjust image size for very small screens */
+    height: 50px;
+  }
+
+  .category-card p {
+    font-size: 14px;
+  }
+}
