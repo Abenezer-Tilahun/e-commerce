@@ -4,10 +4,10 @@ import Button from '@mui/material/Button';
 import { IoIosMenu } from 'react-icons/io';
 import { FaAngleDown } from 'react-icons/fa';
 import { CiHome } from 'react-icons/ci';
-import Fashion from '../../../assets/images/fashion.png';
-import Electronics from '../../../assets/images/electronics.jpg.png';
-import Bags from '../../../assets/images/bag.png';
-import Groceries from '../../../assets/images/grocery-cart.png';
+import Fashion from '../../../assets/images/header/fashion.png';
+import Electronics from '../../../assets/images/header/electronics.jpg.png';
+import Bags from '../../../assets/images/header/bag.png';
+import Groceries from '../../../assets/images/header/grocery-cart.png';
 
 const Navigation = () => {
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);

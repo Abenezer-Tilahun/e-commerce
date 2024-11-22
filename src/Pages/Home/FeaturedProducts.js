@@ -1,8 +1,8 @@
 import React from 'react';
-import phone from '../../assets/images/feature-phone.png';
-import watch from '../../assets/images/fature-watch.png';
-import camera from '../../assets/images/feature-camera.png';
-import inviteimage from '../../assets/images/Playstation.png';
+import phone from '../../assets/images/home/feature-phone.png';
+import watch from '../../assets/images/home/fature-watch.png';
+import camera from '../../assets/images/home/feature-camera.png';
+import inviteimage from '../../assets/images/home/Playstation.png';
 
 const FeaturedProducts = () => {
   const products = [

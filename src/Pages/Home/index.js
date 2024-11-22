@@ -3,7 +3,6 @@ import ProductMain from './ProductMain';
 import CategoryList from './CategoryCard'; // Should match the actual exported component.
 import ProductList from './ProductList';
 import FeaturedProducts from './FeaturedProducts';
-import Footer from './Footer';
 
 const Home = () => (
 
@@ -16,7 +15,6 @@ const Home = () => (
           <ProductList />
         </div>
         <FeaturedProducts />
-        <Footer />
       </div>
     </div>
   </div>

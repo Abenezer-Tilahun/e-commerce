@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 // import { CiHome } from 'react-icons/ci';
-import Fashion from '../../assets/images/fashion.png';
-import Electronics from '../../assets/images/electronics.jpg.png';
-import Bags from '../../assets/images/bag.png';
-import Groceries from '../../assets/images/grocery-cart.png';
-import Beauty from '../../assets/images/Beauty.png';
+import Fashion from '../../assets/images/header/fashion.png';
+import Electronics from '../../assets/images/header/electronics.jpg.png';
+import Bags from '../../assets/images/header/bag.png';
+import Groceries from '../../assets/images/header/grocery-cart.png';
+import Beauty from '../../assets/images/header/Beauty.png';
 
 const categories = [
   { name: 'Fashion', icon: Fashion },
