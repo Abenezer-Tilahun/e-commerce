@@ -141,8 +141,6 @@ ul li {
   }
 }
 
-
-
 /* Electronics Cards Styles */
 .electronics-card {
   border: 1px solid #ddd;
@@ -173,7 +171,6 @@ ul li {
   margin: 0;
   text-align: right;
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
