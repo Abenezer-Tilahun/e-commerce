@@ -1,14 +1,14 @@
 import React from 'react';
 import { GiDeliveryDrone, GiReceiveMoney } from 'react-icons/gi';
 import { BiSupport } from 'react-icons/bi';
-import Facebook from '../../assets/images/facebook.png';
-import Instagram from '../../assets/images/instgram.png';
-import TikTok from '../../assets/images/tiktok.png';
-import Telegram from '../../assets/images/telegram.png';
-import qrsacn from '../../assets/images/qr scan.jpeg';
-import appStoreIcon from '../../assets/images/App store.png';
-import googlePlayIcon from '../../assets/images/google play.png';
-import logo from '../../assets/images/Logo.png';
+import Facebook from '../../assets/images/footer/facebook.png';
+import Instagram from '../../assets/images/footer/instgram.png';
+import TikTok from '../../assets/images/footer/tiktok.png';
+import Telegram from '../../assets/images/footer/telegram.png';
+import qrsacn from '../../assets/images/footer/qr scan.jpeg';
+import appStoreIcon from '../../assets/images/footer/App store.png';
+import googlePlayIcon from '../../assets/images/footer/google play.png';
+import logo from '../../assets/images/header/Logo.png';
 
 const Footer = () => (
   <footer className="footer">

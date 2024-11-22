@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { FaRegUser } from 'react-icons/fa';
 import { BsBag } from 'react-icons/bs';
 import { useContext } from 'react';
-import Logo from '../../assets/images/Logo.png';
+import Logo from '../../assets/images/header/Logo.png';
 import CountryDropdown from '../CountryDropdown';
 import SearchBox from './SearchBox';
 import Navigation from './Navigation';

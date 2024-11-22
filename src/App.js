@@ -10,6 +10,8 @@ import {
 import axios from 'axios';
 import Home from './Pages/Home';
 import Header from './Components/Header';
+import Footer from './Pages/Home/Footer';
+import Product from './Pages/Product';
 
 export const MyContext = createContext();
 
@@ -38,7 +40,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
         </Routes>
+        <Footer />
       </MyContext.Provider>
     </BrowserRouter>
   );

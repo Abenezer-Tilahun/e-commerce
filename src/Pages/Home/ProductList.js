@@ -1,10 +1,10 @@
 import React from 'react';
-import joystick from '../../assets/images/joy-stick.png';
-import Tv from '../../assets/images/tv-1.png';
-import jacket from '../../assets/images/jacket-1.png';
-import laptop from '../../assets/images/laptop-1.png';
-import bag from '../../assets/images/bag-1.png';
-import loation from '../../assets/images/beauty-1.png';
+import joystick from '../../assets/images/home/joy-stick.png';
+import Tv from '../../assets/images/home/tv-1.png';
+import jacket from '../../assets/images/home/jacket-1.png';
+import laptop from '../../assets/images/home/laptop-1.png';
+import bag from '../../assets/images/home/bag-1.png';
+import loation from '../../assets/images/home/beauty-1.png';
 
 const ProductList = () => {
   const products = [

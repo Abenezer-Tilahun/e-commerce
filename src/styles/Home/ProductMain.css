@@ -1,0 +1,59 @@
+/* Container styles */
+.product-main-container {
+  padding-top: 3rem;
+}
+
+/* Row styles */
+.product-main-row {
+  justify-content: center;
+}
+
+/* Card styles */
+.product-main-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+/* Image column styles */
+.product-image-col .product-image {
+  width: 100%;
+  display: block;
+}
+
+/* Details column styles */
+.product-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title styles */
+.product-title {
+  font-weight: bold;
+}
+
+/* Description styles */
+.product-description {
+  margin-bottom: 1rem;
+  display: grid;
+}
+
+.product-specs {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.product-specs li {
+  margin-bottom: 0.5rem;
+}
+
+/* Button styles */
+.product-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.product-button {
+  flex: 1;
+  text-align: center;
+}
