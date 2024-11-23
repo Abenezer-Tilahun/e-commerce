@@ -1,0 +1,97 @@
+/* General Layout */
+.account-container {
+  display: flex;
+  align-items: flex-start;  /* Align items at the top */
+  gap: 30px;  /* Space between profile picture and form */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Profile Picture */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Section */
+.form-container {
+  display: flex;
+  flex-direction: column;  /* Stack the form elements vertically */
+  flex-grow: 1;  /* Make the form take remaining space */
+  gap: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.tab.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Form Content */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.save-button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background: #e68a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .account-container {
+    flex-direction: column;  /* Stack the profile and form vertically on smaller screens */
+    align-items: center;  /* Center items */
+  }
+
+  .form-container {
+    width: 100%;  /* Full width for form */
+  }
+}
