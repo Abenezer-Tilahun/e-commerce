@@ -18,6 +18,7 @@ import Order from './Pages/Order';
 import Wishlist from './Pages/Wishlist';
 import Cart from './Pages/Cart';
 import Coupon from './Pages/Coupon';
+import MyAccount from './Pages/Account';
 
 export const MyContext = createContext();
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/product/product-detail/order" element={<Order />} />
           <Route path="/product/product-detail/ordercheck" element={<OrderCheck />} />
           <Route path="/product/cart" element={<Cart />} />
+          <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/coupon" element={<Coupon />} />
         </Routes>
