@@ -14,6 +14,9 @@ import Footer from './Pages/Home/Footer';
 import Product from './Pages/Product';
 import ProductDetail from './Pages/ProductDetail';
 import OrderCheck from './Pages/OrderCheck';
+import Order from './Pages/Order';
+import Wishlist from './Pages/Wishlist';
+import Cart from './Pages/Cart';
 
 export const MyContext = createContext();
 
@@ -44,7 +47,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product/product-detail" element={<ProductDetail />} />
-          <Route path="/product/product-detail/order" element={<OrderCheck />} />
+          <Route path="/product/product-detail/order" element={<Order />} />
+          <Route path="/product/product-detail/ordercheck" element={<OrderCheck />} />
+          <Route path="/product/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
         <Footer />
       </MyContext.Provider>
