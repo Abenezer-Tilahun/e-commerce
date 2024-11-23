@@ -1,62 +1,56 @@
 .order-container {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 95%; /* Increase container width to utilize more screen space */
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .order-title {
-    text-align: left; /* Aligns the title to the left */
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    color: #333;
-    padding-left: 10px; /* Adds some padding for aesthetics */
-  }
-  
-  .gamepad-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .table-responsive {
-    margin-top: 30px;
-    overflow-x: auto; /* Ensure table responsiveness */
-  }
-  
-  .table {
-    width: 100%; /* Ensures table takes up full width of container */
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .table th,
-  .table td {
-    text-align: left;
-    padding: 12px;
-    border: 1px solid #ddd;
-  }
-  
-  .table th {
-    background-color: #f4f4f4;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .table-striped tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-  
-  .table-striped tbody tr:nth-child(even) {
-    background-color: #fff;
-  }
-  
-  /* For slightly wider table */
-  .table {
-    width: 98%; /* Adjust table width to nearly fill the container */
-    margin: 0 auto; /* Center the table within its container */
-  }
-  
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 95%; /* Increase container width to utilize more screen space */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-title {
+  text-align: left; /* Aligns the title to the left */
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  padding-left: 10px; /* Adds some padding for aesthetics */
+}
+
+.gamepad-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.table-responsive {
+  margin-top: 30px;
+  overflow-x: auto; /* Ensure table responsiveness */
+}
+
+.table {
+  margin-bottom: 20px;
+  width: 98%; /* Adjust table width to nearly fill the container */
+  margin: 0 auto; /* Center the table within its container */
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
