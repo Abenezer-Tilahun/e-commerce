@@ -23,7 +23,7 @@ const Wishlist = () => (
             />
             <div className="Wishlist-product-details">
               <p className="Wishlist-product-title">Sample Product</p>
-              <p className="Wishlist-product-review">⭐ 4.5 (Customer Reviews)</p>
+              <p className="Wishlist-product-review">⭐⭐⭐⭐⭐4.5 (Customer Reviews)</p>
             </div>
           </td>
           <td className="Wishlist-unit-price">$20.00</td>
