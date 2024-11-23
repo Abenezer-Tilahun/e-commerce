@@ -13,6 +13,7 @@ import Header from './Components/Header';
 import Footer from './Pages/Home/Footer';
 import Product from './Pages/Product';
 import ProductDetail from './Pages/ProductDetail';
+import OrderCheck from './Pages/OrderCheck';
 
 export const MyContext = createContext();
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product/product-detail" element={<ProductDetail />} />
+          <Route path="/product/product-detail/order" element={<OrderCheck />} />
         </Routes>
         <Footer />
       </MyContext.Provider>
