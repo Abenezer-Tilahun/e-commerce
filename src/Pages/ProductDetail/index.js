@@ -37,6 +37,7 @@ const ProductDetail = () => {
           <div className="size-selector">
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label id="product-size-label" htmlFor="size-selector">Size:</label>
+            <input type="hidden" id="size-selector" />
             <div className="size-buttons">
               {['S', 'M', 'L', 'XL'].map((size) => (
                 <button
@@ -60,7 +61,6 @@ const ProductDetail = () => {
               Add To Cart
             </button>
           </div>
-
         </div>
       </div>
       <div className="product-description">
@@ -81,11 +81,13 @@ const ProductDetail = () => {
           <li>Color: Silver</li>
         </ul>
       </div>
-      <h2>Customer Question & Answers</h2>
-      <textarea placeholder="Write a Review" />
-      <button type="button" className="submit-review">
-        Submit Review
-      </button>
+      <div className="customer-reviews">
+        <h2>Customer Questions & Answers</h2>
+        <textarea placeholder="Write a Review" />
+        <button type="button" className="submit-review">
+          Submit Review
+        </button>
+      </div>
     </div>
   );
 };

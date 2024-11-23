@@ -131,13 +131,15 @@ body {
 
 .quantity {
   display: flex;
+  align-items: center; /* Vertically aligns controls and button */
+  gap: 20px; /* Space between quantity controls and the Add to Cart button */
   margin: 20px 0;
-  justify-content: space-between;
 }
 
 .quantity-controls {
   display: flex;
-  margin: 10px 0;
+  align-items: center;
+  gap: 5px; /* Space between controls */
 }
 
 .quantity-controls button {
@@ -146,54 +148,84 @@ body {
   background-color: #ddd;
   border: none;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .quantity-controls input {
   width: 50px;
+  height: 30px;
   text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .add-to-cart {
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .add-to-cart:hover {
   background-color: #0056b3;
 }
 
-.product-description h2 {
-  font-size: 20px;
-  color: #333;
-  margin-top: 20px;
-}
-
 .customer-reviews {
-  margin-top: 20px;
+  margin-top: 30px;
+  flex-direction: column; /* Stack elements vertically */
+  gap: 10px; /* Add spacing between textarea and button */
 }
 
 .customer-reviews textarea {
   width: 100%;
   height: 100px;
-  margin-bottom: 10px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 14px;
+  resize: none; /* Prevents resizing of textarea */
 }
 
 .submit-review {
+  align-self: flex-start; /* Align the button to the start of the container */
+  margin-top: 10px;
   padding: 10px 20px;
   background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .submit-review:hover {
   background-color: #218838;
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .product-header {
+    flex-direction: column; /* Stacks images and product info vertically */
+    align-items: center;
+  }
+
+  .product-info {
+    width: 100%; /* Full width for small screens */
+  }
+
+  .quantity {
+    flex-direction: column; /* Stacks quantity controls and button vertically */
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .add-to-cart {
+    width: 100%; /* Full width for better accessibility */
+  }
 }
