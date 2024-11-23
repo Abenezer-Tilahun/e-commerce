@@ -28,9 +28,8 @@
 }
 
 .table {
-  margin-bottom: 20px;
   width: 98%; /* Adjust table width to nearly fill the container */
-  margin: 0 auto; /* Center the table within its container */
+  margin: 10px 20px  20px 55px; /* Center the table within its container */
 }
 
 .table th,
@@ -53,4 +52,3 @@
 .table-striped tbody tr:nth-child(even) {
   background-color: #fff;
 }
-
