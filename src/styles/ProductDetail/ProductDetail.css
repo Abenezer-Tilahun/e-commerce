@@ -1,0 +1,230 @@
+/* General Reset */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.product-detail {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-images {
+  display: flex;
+  align-items: center; /* Centers the thumbnails vertically with the main image */
+}
+
+.main-image {
+  flex: 2; /* The main image takes up more space */
+  max-width: 80%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.thumbnail-images {
+  flex: 1; /* The thumbnails take up less space */
+  display: flex;
+  flex-direction: column; /* Stacks thumbnails vertically */
+  justify-content: center;
+}
+
+.thumbnail-images img {
+  width: 140px; /* Set consistent width for thumbnails */
+  margin-bottom: 10px; /* Adds spacing between thumbnails */
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.thumbnail-images img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  border-color: #007bff; /* Changes border color on hover */
+}
+
+.product-info {
+  width: 55%;
+  padding: 10px;
+}
+
+.product-info h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.brand {
+  font-size: 14px;
+  color: #777;
+}
+
+.price {
+  font-size: 20px;
+  color: #e60023;
+}
+
+.availability {
+  font-size: 14px;
+  color: green;
+}
+
+.description {
+  margin: 10px 0;
+}
+
+.size-selector {
+  display: flex; /* Arrange label and buttons horizontally */
+  align-items: center; /* Vertically align label and buttons */
+  gap: 10px; /* Add space between label and buttons */
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.size-selector label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.size-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.size-button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.size-button:hover {
+  background-color: #eaeaea;
+  border-color: #bbb;
+}
+
+.size-button.active {
+  background-color: #ff0095;
+  color: white;
+  border-color: #b30062;
+}
+
+.size-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff00ea;
+}
+
+.quantity {
+  display: flex;
+  align-items: center; /* Vertically aligns controls and button */
+  gap: 20px; /* Space between quantity controls and the Add to Cart button */
+  margin: 20px 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between controls */
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.quantity-controls input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-to-cart {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+.customer-reviews {
+  margin-top: 30px;
+  flex-direction: column; /* Stack elements vertically */
+  gap: 10px; /* Add spacing between textarea and button */
+}
+
+.customer-reviews textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none; /* Prevents resizing of textarea */
+}
+
+.submit-review {
+  align-self: flex-start; /* Align the button to the start of the container */
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-review:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .product-header {
+    flex-direction: column; /* Stacks images and product info vertically */
+    align-items: center;
+  }
+
+  .product-info {
+    width: 100%; /* Full width for small screens */
+  }
+
+  .quantity {
+    flex-direction: column; /* Stacks quantity controls and button vertically */
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .add-to-cart {
+    width: 100%; /* Full width for better accessibility */
+  }
+}
