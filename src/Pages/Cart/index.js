@@ -3,8 +3,8 @@ import gamepadthumbnail from '../../assets/images/wishlist/product-joystick-1.pn
 
 const Cart = () => (
   <div className="cart-container">
-    <h1 className="cart-title">My List</h1>
-    <p className="cart-detail">There are 1 products in your My List</p>
+    <h1 className="cart-title">Your Cart</h1>
+    <p className="cart-detail">There are 1 products in your Cart</p>
     <div className="table-container">
       <table className="cart-table">
         <thead>
