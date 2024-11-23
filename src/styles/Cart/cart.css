@@ -1,0 +1,130 @@
+/* Adjust container width */
+
+/* Adjust container width */
+.cart-container {
+  max-width: 1000px; /* Ensure enough space for tables */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for tables */
+.table-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Add spacing between the tables */
+  margin-top: 20px;
+  flex-wrap: nowrap; /* Prevent stacking */
+}
+
+/* Ensure tables are responsive and balanced */
+.cart-table {
+  flex: 2; /* Allocate more space to the first table */
+  margin-right: 10px;
+  border-collapse: collapse;
+  min-width: 150px; /* Increase minimum width for the first table */
+}
+
+.table {
+  flex: 1; /* Allocate less space to the second table */
+  max-width: 400px;
+  border-collapse: collapse;
+}
+
+/* Title styling */
+.cart-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Detail text styling */
+.cart-detail {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Table styling */
+.cart-table th,
+.cart-table td,
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 10px;
+}
+
+.cart-table th {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Product column styling */
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-product-image {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cart-product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart-product-review {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Unit price column styling */
+.cart-unit-price {
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+}
+
+/* Remove button styling */
+.cart-remove-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-remove-button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    flex-wrap: wrap; /* Allow stacking for small screens */
+  }
+
+  .cart-table,
+  .table {
+    flex: none;
+    width: 100%; /* Tables take full width when stacked */
+  }
+}
