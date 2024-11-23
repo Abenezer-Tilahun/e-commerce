@@ -1,0 +1,61 @@
+.coupon-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 90%; /* Utilize more screen space for better appearance */
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.coupon-title {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.table-responsive {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%; /* Fill the container completely */
+  border-collapse: collapse; /* Removes unnecessary spacing between cells */
+  margin: 0 auto;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+}
+
+.table th {
+  background-color: #007bff; /* Adds a theme color to headers */
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.total-row {
+  font-weight: bold;
+  background-color: #f0f8ff; /* Highlights the total row */
+}
+
+.total-row td {
+  text-align: center; /* Centers content in the total row */
+}
