@@ -1,0 +1,102 @@
+/* Container */
+.Contactus-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Left Section */
+.Contactus-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.Contactus-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.Contactus-detail {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.Contactus-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.Contactus-info-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.Contactus-info-item h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.Contactus-info-item p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.info-phone,
+.info-email {
+  font-weight: bold;
+  color: #f45d01;
+}
+
+/* Right Section (Form) */
+.Contactus-right {
+  flex: 1;
+  padding: 30px;
+  padding-left: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Contactus-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Contactus-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.Contactus-textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 150px;
+}
+
+.Contactus-btn {
+  padding: 12px;
+  background-color: #f45d01;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Contactus-btn:hover {
+  background-color: #e64a00;
+}

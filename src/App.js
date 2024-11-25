@@ -20,6 +20,7 @@ import Cart from './Pages/Cart';
 import Coupon from './Pages/Coupon';
 import MyAccount from './Pages/Account';
 import Paymnet from './Pages/Paymnet';
+import Contactus from './Pages/Contactus';
 
 export const MyContext = createContext();
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/coupon" element={<Coupon />} />
+          <Route path="/Contactus" element={<Contactus />} />
         </Routes>
         <Footer />
       </MyContext.Provider>
