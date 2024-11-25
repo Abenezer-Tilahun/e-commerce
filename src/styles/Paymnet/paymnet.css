@@ -1,0 +1,160 @@
+.Payment-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 750px; /* Increased the width */
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added a subtle shadow for better aesthetics */
+}
+
+.Payment-title {
+  text-align: left;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.Payment-detail {
+  text-align: left;
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.Payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.Payment-methods-grid label {
+  display: flex;
+  align-items: center; /* Align items horizontally */
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.Payment-methods-grid input {
+  margin: 0;
+}
+
+.payment-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.Payment-details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.Payment-summary {
+  flex: 1;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.summary-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.summary-details p {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-details span {
+  font-weight: bold;
+  color: #e63946;
+}
+
+.Payment-mobile {
+  flex: 1;
+}
+
+.Payment-mobile label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.mobile-input {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjusted spacing between elements */
+}
+
+.mobile-input select,
+.mobile-input input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#mobile-number {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.continue-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.continue-btn:hover {
+  background-color: #e67e22;
+}
+
+.custom-select {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  height: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.flag-icon {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.mobile-code {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 5px; /* Spacing between flag and code */
+}
