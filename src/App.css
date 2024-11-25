@@ -12,6 +12,7 @@
 @import '../src/styles/Home/Footer.css';
 @import '../src/styles/Product/Product.css';
 @import '../src/styles/ProductDetail/ProductDetail.css';
+@import '../src/styles/OrderCheck/ordercheck.css';
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
