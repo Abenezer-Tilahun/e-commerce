@@ -108,9 +108,9 @@ const OrderCheck = () => (
       </div>
     </form>
     {/* Tables Section */}
-    <div className="tables-container">
+    <div className="tableordercheck-container">
       {/* Selected Items Table */}
-      <table className="table">
+      <table className="tableordercheck">
         <thead>
           <tr>
             <th colSpan="3">Selected Items</th>
@@ -127,7 +127,7 @@ const OrderCheck = () => (
               <img
                 src={gamepadthumbnail}
                 alt="Product"
-                className="product-image"
+                className="productorder-image"
               />
               <p>Sliver</p>
             </td>
@@ -144,7 +144,7 @@ const OrderCheck = () => (
       </table>
 
       {/* Summary Table */}
-      <table className="table">
+      <table className="tableordercheck">
         <thead>
           <tr>
             <th colSpan="3">Your Order</th>
@@ -161,7 +161,7 @@ const OrderCheck = () => (
           </tr>
           <tr>
             <td colSpan="3" className="center">
-              <button type="button" className="order-button">Place Order</button>
+              <button type="button" className="ordercheck-button">Place Order</button>
             </td>
           </tr>
         </tbody>

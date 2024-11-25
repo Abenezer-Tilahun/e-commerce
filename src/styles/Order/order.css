@@ -1,18 +1,18 @@
 .order-container {
   margin: 20px auto;
   padding: 20px;
-  max-width: 95%; /* Increase container width to utilize more screen space */
+  max-width: 95%; /* Container width */
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .order-title {
-  text-align: left; /* Aligns the title to the left */
+  text-align: left;
   margin-bottom: 20px;
   font-size: 2.5rem;
   color: #333;
-  padding-left: 10px; /* Adds some padding for aesthetics */
+  padding-left: 10px;
 }
 
 .gamepad-image {
@@ -22,24 +22,25 @@
   margin-bottom: 15px;
 }
 
-.table-responsive {
+/* Responsive wrapper for the table */
+.tableorder-responsive {
   margin-top: 30px;
-  overflow-x: auto; /* Ensure table responsiveness */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
-.table {
-  width: 98%; /* Adjust table width to nearly fill the container */
-  margin: 10px 20px  20px 55px; /* Center the table within its container */
+.tableorder {
+  width: 100%; /* Make the table occupy the full width of the container */
+  border-collapse: collapse; /* Avoid gaps between table borders */
 }
 
-.table th,
-.table td {
+.tableorder th,
+.tableorder td {
   text-align: left;
   padding: 12px;
   border: 1px solid #ddd;
 }
 
-.table th {
+.tableorder th {
   background-color: #f4f4f4;
   color: #333;
   font-weight: bold;
@@ -51,4 +52,11 @@
 
 .table-striped tbody tr:nth-child(even) {
   background-color: #fff;
+}
+
+/* Add box-sizing to prevent unintended overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
