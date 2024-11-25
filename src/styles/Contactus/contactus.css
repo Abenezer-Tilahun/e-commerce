@@ -70,12 +70,18 @@
   flex-direction: column;
 }
 
+.Contactus-input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
 .Contactus-input {
   padding: 10px;
-  margin-bottom: 15px;
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
+  flex: 1;
 }
 
 .Contactus-textarea {
@@ -84,6 +90,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   height: 150px;
+  margin-bottom: 20px;
 }
 
 .Contactus-btn {

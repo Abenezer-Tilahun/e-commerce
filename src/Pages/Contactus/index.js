@@ -27,9 +27,11 @@ const Contactus = () => (
     </div>
     <div className="Contactus-right">
       <form className="Contactus-form">
-        <input type="text" placeholder="Your Name *" className="Contactus-input" required />
-        <input type="email" placeholder="Your Email *" className="Contactus-input" required />
-        <input type="tel" placeholder="Your Number *" className="Contactus-input" required />
+        <div className="Contactus-input-group">
+          <input type="text" placeholder="Your Name *" className="Contactus-input" required />
+          <input type="email" placeholder="Your Email *" className="Contactus-input" required />
+          <input type="tel" placeholder="Your Number *" className="Contactus-input" required />
+        </div>
         <textarea placeholder="Your Message" className="Contactus-textarea" required />
         <button type="submit" className="Contactus-btn">Send Message</button>
       </form>
