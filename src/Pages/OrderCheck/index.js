@@ -127,7 +127,7 @@ const OrderCheck = () => (
               <img
                 src={gamepadthumbnail}
                 alt="Product"
-                className="product-image"
+                className="productorder-image"
               />
               <p>Sliver</p>
             </td>

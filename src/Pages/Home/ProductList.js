@@ -78,7 +78,7 @@ const ProductList = () => {
             {product.discount}
             %
           </div>
-          <img src={product.image} alt={product.name} className="product-image" style={{ backgroundImage: `url(${product.image})` }} />
+          <img src={product.image} alt={product.name} className="productlist-image" style={{ backgroundImage: `url(${product.image})` }} />
           <h3>{product.name}</h3>
           <div className="pricing">
             <span className="price">
