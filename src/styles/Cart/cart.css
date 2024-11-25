@@ -117,6 +117,21 @@
   background-color: #c0392b;
 }
 
+.cart-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block; /* Ensures it stays left-aligned */
+  margin-left: 0; /* Adjust margins if necessary */
+}
+
+.ordercheck-button:hover {
+  background-color: #218838;
+}
+
 @media (max-width: 768px) {
   .table-container {
     flex-wrap: wrap; /* Allow stacking for small screens */

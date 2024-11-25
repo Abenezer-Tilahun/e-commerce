@@ -67,7 +67,7 @@ const Cart = () => (
           </tr>
           <tr>
             <td colSpan="3" className="center">
-              <button type="button" className="order-button">Place Order</button>
+              <button type="button" className="cart-button">Place Order</button>
             </td>
           </tr>
         </tbody>
