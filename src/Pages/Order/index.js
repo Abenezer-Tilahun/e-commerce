@@ -3,8 +3,8 @@ import React from 'react';
 const Order = () => (
   <div className="order-container">
     <h1 className="order-title">Order</h1>
-    <div className="table-responsive">
-      <table className="table table-striped">
+    <div className="tableorder-responsive">
+      <table className="tableorder table-striped">
         <thead>
           <tr>
             <th>Order ID</th>
