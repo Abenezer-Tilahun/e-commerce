@@ -1,6 +1,10 @@
 {
     "presets": [
-        "@babel/preset-react"
+      "@babel/preset-env",       // For modern JavaScript features in Node.js
+      "@babel/preset-react"      // For React JSX and related features
     ],
-    "plugins": ["@babel/plugin-syntax-jsx"]
+    "plugins": [
+      "@babel/plugin-syntax-jsx" // For JSX support in Babel
+    ]
   }
+  
