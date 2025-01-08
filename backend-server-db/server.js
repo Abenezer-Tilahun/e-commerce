@@ -1,6 +1,6 @@
 const express = require('express');
-const { Pool } = require('pg'); // Import PostgreSQL client
-const cors = require('cors'); // For enabling CORS requests from React
+const { Pool } = require('pg');
+const cors = require('cors');
 
 const app = express();
 const port = 5000; // Port for your backend server
