@@ -1,20 +1,20 @@
 const express = require('express');
-const { Pool } = require('pg');  // Import PostgreSQL client
-const cors = require('cors');  // For enabling CORS requests from React
+const { Pool } = require('pg'); // Import PostgreSQL client
+const cors = require('cors'); // For enabling CORS requests from React
 
 const app = express();
-const port = 5000;  // Port for your backend server
+const port = 5000; // Port for your backend server
 
 // Enable CORS for React to make requests
 app.use(cors());
 
 // PostgreSQL client setup
 const pool = new Pool({
-  user: 'abene',  // your PostgreSQL username
-  host: 'localhost',  // your PostgreSQL server address
-  database: 'diregebeya',  // the database you want to connect to
-  password: 'abene1234',  // your PostgreSQL password
-  port: 5432,  // the port your PostgreSQL server is listening on
+  user: 'abene', // your PostgreSQL username
+  host: 'localhost', // your PostgreSQL server address
+  database: 'diregebeya', // the database you want to connect to
+  password: 'abene1234', // your PostgreSQL password
+  port: 5432, // the port your PostgreSQL server is listening on
 });
 
 // Test route to ensure backend is connected to PostgreSQL
