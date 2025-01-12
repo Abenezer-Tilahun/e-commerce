@@ -9,10 +9,37 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log('Login Successful'); // Replace this with actual authentication logic
-    navigate('/'); // Redirect to home page
+
+    const loginData = {
+      emailOrPhone: email, // Either email or phone
+      password,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+      // Store the token (e.g., in localStorage or context)
+        localStorage.setItem('authToken', data.token);
+
+        // Navigate to the home page or a protected route
+        navigate('/');
+      } else {
+        alert(data.message); // Show error message from the server
+      }
+    } catch (error) {
+      alert('Login failed. Please try again.');
+    }
   };
 
   return (

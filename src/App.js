@@ -31,7 +31,7 @@ function App() {
   const [countryList, setCountryList] = useState();
   const [selectedCountry, setselectedCountry] = useState('');
   const location = useLocation(); // Get the current path
-  const noHeaderFooterRoutes = ['/SignIn', '/SignUp', '/ForgotPassword']; // Define routes without header and footer
+  const noHeaderFooterRoutes = ['/signin', '/signup', '/forgot-password']; // Define routes without header and footer
 
   const getCountry = async (url) => {
     await axios.get(url).then((res) => {
