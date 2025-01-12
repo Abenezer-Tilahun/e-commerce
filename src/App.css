@@ -20,6 +20,8 @@
 @import '../src/styles/Account/account.css';
 @import '../src/styles/Paymnet/paymnet.css';
 @import '../src/styles/Contactus/contactus.css';
+@import '../src/styles/UserLogin/userlogin.css';
+@import '../src/styles/UserLogin/SignIn.css';
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
