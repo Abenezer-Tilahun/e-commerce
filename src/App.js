@@ -5,10 +5,12 @@ import './App.css';
 import {
   Route,
   Routes,
-  useLocation, Navigate,
+  useLocation,
+  Navigate,
+  useNavigate,
 } from 'react-router-dom';
 import axios from 'axios';
-// import Home from './Pages/Home';
+import Home from './Pages/Home';
 import Header from './Components/Header';
 import Footer from './Pages/Home/Footer';
 import Product from './Pages/Product';
@@ -30,7 +32,9 @@ export const MyContext = createContext();
 function App() {
   const [countryList, setCountryList] = useState();
   const [selectedCountry, setselectedCountry] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Track authentication state
   const location = useLocation(); // Get the current path
+  const navigate = useNavigate();
   const noHeaderFooterRoutes = ['/signin', '/signup', '/forgot-password']; // Define routes without header and footer
 
   const getCountry = async (url) => {
@@ -48,12 +52,37 @@ function App() {
   }, []);
 
   const values = { countryList, setselectedCountry, selectedCountry };
+
+  // Redirect authenticated users from `/signin` to `/`
+  useEffect(() => {
+    if (isAuthenticated && location.pathname === '/signin') {
+      navigate('/');
+    }
+  }, [isAuthenticated, location.pathname, navigate]);
+
   return (
     <MyContext.Provider value={values}>
       {/* <Header /> */}
       {!noHeaderFooterRoutes.includes(location.pathname) && <Header />}
       <Routes>
-        <Route path="/" element={<Navigate to="/signin" replace />} />
+        <Route
+          path="/"
+          element={
+      isAuthenticated ? (
+        <Home />
+      ) : (
+        <Navigate to="/signin" replace />
+      )
+    }
+        />
+        <Route
+          path="/signin"
+          element={(
+            <SignIn
+              onSignIn={() => setIsAuthenticated(true)}
+            />
+    )}
+        />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

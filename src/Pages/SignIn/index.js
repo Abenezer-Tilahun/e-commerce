@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import signinImage from '../../assets/images/Signin/signin.png';
 import Logo from '../../assets/images/logo/log.png';
 import google from '../../assets/images/Signin/goggle.png';
 
-const SignIn = () => {
+const SignIn = ({ onSignIn }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +14,7 @@ const SignIn = () => {
     e.preventDefault();
 
     const loginData = {
-      emailOrPhone: email, // Either email or phone
+      emailOrPhone: email,
       password,
     };
 
@@ -29,13 +30,16 @@ const SignIn = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Store the token (e.g., in localStorage or context)
+        // Store token in localStorage
         localStorage.setItem('authToken', data.token);
 
-        // Navigate to the home page or a protected route
+        // Update authentication state in App component
+        onSignIn();
+
+        // Navigate to home page
         navigate('/');
       } else {
-        alert(data.message); // Show error message from the server
+        alert(data.message);
       }
     } catch (error) {
       alert('Login failed. Please try again.');
@@ -128,6 +132,9 @@ const SignIn = () => {
       </div>
     </div>
   );
+};
+SignIn.propTypes = {
+  onSignIn: PropTypes.func.isRequired,
 };
 
 export default SignIn;
