@@ -29,7 +29,7 @@ const SignIn = () => {
       const data = await response.json();
 
       if (response.ok) {
-      // Store the token (e.g., in localStorage or context)
+        // Store the token (e.g., in localStorage or context)
         localStorage.setItem('authToken', data.token);
 
         // Navigate to the home page or a protected route
@@ -51,6 +51,7 @@ const SignIn = () => {
       <div className="ellipse small-right-bottom" />
       <div className="ellipse left-bottom" />
       <div className="ellipse right-top" />
+
       {/* Left Image Section */}
       <div className="signin-image">
         <img src={signinImage} alt="SignIn Visual" />
@@ -59,9 +60,12 @@ const SignIn = () => {
       {/* Right Form Section */}
       <div className="signin-form">
         <div className="form-container">
-          <img src={Logo} alt="Logo" className="signin-logo" />
-          <h2>Welcome Back!</h2>
-          <p>Sign in to your account</p>
+          {/* Logo section */}
+          <div className="logo-container">
+            <img src={Logo} alt="Logo" className="signin-logo" />
+            <h2>Welcome Back!</h2>
+            <p>Sign in to your account</p>
+          </div>
           <form className="auth-form" onSubmit={handleSignIn}>
             <div className="form-group">
               {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -87,11 +91,13 @@ const SignIn = () => {
                 required
               />
             </div>
+
             <div className="form-links">
               <a href="/forgot-password" className="forgot-password-link">
                 Forgot Password?
               </a>
             </div>
+
             <div className="form-buttons">
               <button type="submit" className="btn btn-primary">
                 Sign In
@@ -104,12 +110,14 @@ const SignIn = () => {
                 Cancel
               </button>
             </div>
+
             <div className="signup-link">
               Not registered?
+              {' '}
               <a href="/signup">Sign Up</a>
             </div>
+
             <div className="social-login">
-              <p>Or continue with</p>
               <button type="button" className="google-login">
                 <img src={google} alt="Google" />
                 Sign in with Google

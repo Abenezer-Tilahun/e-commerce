@@ -5,10 +5,10 @@ import './App.css';
 import {
   Route,
   Routes,
-  useLocation,
+  useLocation, Navigate,
 } from 'react-router-dom';
 import axios from 'axios';
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 import Header from './Components/Header';
 import Footer from './Pages/Home/Footer';
 import Product from './Pages/Product';
@@ -53,7 +53,7 @@ function App() {
       {/* <Header /> */}
       {!noHeaderFooterRoutes.includes(location.pathname) && <Header />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/signin" replace />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
