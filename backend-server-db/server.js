@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
@@ -5,6 +6,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const jwt = require('jsonwebtoken');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const port = 5000;
@@ -51,7 +53,8 @@ app.post('/register', async (req, res) => {
     const userId = userResult.rows[0].id;
 
     // Generate a unique id for UserAuth
-    // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+    // const { v4: uuidv4 } = require('uuid');
+    // eslint-disable-next-line global-require
     const { v4: uuidv4 } = require('uuid');
     const userAuthId = uuidv4();
 
@@ -101,6 +104,60 @@ app.post('/login', async (req, res) => {
     return res.json({ token });
   } catch (err) {
     return res.status(500).json({ message: 'Server error', details: err.message });
+  }
+});
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { OAuth2Client } = require('google-auth-library');
+
+const client = new OAuth2Client('YOUR_GOOGLE_CLIENT_ID');
+
+app.post('/google-signup', async (req, res) => {
+  const { token } = req.body;
+
+  try {
+    // Verify the Google token
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: 'YOUR_GOOGLE_CLIENT_ID',
+    });
+    const payload = ticket.getPayload();
+    const { email, name } = payload;
+
+    // Check if the user already exists
+    const existingUser = await pool.query(
+      'SELECT id FROM "User" WHERE email = $1',
+      [email],
+    );
+
+    let userId;
+    if (existingUser.rows.length > 0) {
+      // User exists, return their ID
+      userId = existingUser.rows[0].id;
+    } else {
+      // User does not exist, create a new user
+      const userResult = await pool.query(
+        'INSERT INTO "User" (name, email) VALUES ($1, $2) RETURNING id',
+        [name, email],
+      );
+      userId = userResult.rows[0].id;
+
+      // Insert into UserAuth table with provider as 'GOOGLE'
+      // eslint-disable-next-line global-require
+      const { v4: uuidv4 } = require('uuid');
+      const userAuthId = uuidv4();
+      await pool.query(
+        'INSERT INTO "UserAuth" (id, "userId", provider) VALUES ($1, $2, $3)',
+        [userAuthId, userId, 'GOOGLE'],
+      );
+    }
+
+    // Generate JWT for the user
+    const jwtToken = jwt.sign({ userId }, 'yourSecretKey', { expiresIn: '1h' });
+
+    return res.json({ token: jwtToken });
+  } catch (err) {
+    return res.status(500).json({ message: 'Google sign-up failed', details: err.message });
   }
 });
 
