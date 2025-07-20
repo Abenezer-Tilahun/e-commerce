@@ -3,9 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import {
-  BrowserRouter,
   Route,
   Routes,
+  useLocation,
+  Navigate,
+  useNavigate,
 } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Pages/Home';
@@ -21,12 +23,19 @@ import Coupon from './Pages/Coupon';
 import MyAccount from './Pages/Account';
 import Paymnet from './Pages/Paymnet';
 import Contactus from './Pages/Contactus';
+import SignIn from './Pages/SignIn';
+import SignUp from './Pages/SignUp';
+import ForgotPassword from './Pages/ForgotPassword';
 
 export const MyContext = createContext();
 
 function App() {
   const [countryList, setCountryList] = useState();
   const [selectedCountry, setselectedCountry] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Track authentication state
+  const location = useLocation(); // Get the current path
+  const navigate = useNavigate();
+  const noHeaderFooterRoutes = ['/signin', '/signup', '/forgot-password']; // Define routes without header and footer
 
   const getCountry = async (url) => {
     await axios.get(url).then((res) => {
@@ -43,26 +52,55 @@ function App() {
   }, []);
 
   const values = { countryList, setselectedCountry, selectedCountry };
+
+  // Redirect authenticated users from `/signin` to `/`
+  useEffect(() => {
+    if (isAuthenticated && location.pathname === '/signin') {
+      navigate('/');
+    }
+  }, [isAuthenticated, location.pathname, navigate]);
+
   return (
-    <BrowserRouter>
-      <MyContext.Provider value={values}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/product/product-detail" element={<ProductDetail />} />
-          <Route path="/product/product-detail/order" element={<Order />} />
-          <Route path="/product/product-detail/ordercheck" element={<OrderCheck />} />
-          <Route path="/product/product-detail/ordercheck/payment" element={<Paymnet />} />
-          <Route path="/product/cart" element={<Cart />} />
-          <Route path="/myaccount" element={<MyAccount />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/coupon" element={<Coupon />} />
-          <Route path="/Contactus" element={<Contactus />} />
-        </Routes>
-        <Footer />
-      </MyContext.Provider>
-    </BrowserRouter>
+    <MyContext.Provider value={values}>
+      {/* <Header /> */}
+      {!noHeaderFooterRoutes.includes(location.pathname) && <Header />}
+      <Routes>
+        <Route
+          path="/"
+          element={
+      isAuthenticated ? (
+        <Home />
+      ) : (
+        <Navigate to="/signin" replace />
+      )
+    }
+        />
+        <Route
+          path="/signin"
+          element={(
+            <SignIn
+              onSignIn={() => setIsAuthenticated(true)}
+            />
+    )}
+        />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/product/product-detail" element={<ProductDetail />} />
+        <Route path="/product/product-detail/order" element={<Order />} />
+        <Route path="/product/product-detail/ordercheck" element={<OrderCheck />} />
+        <Route path="/product/product-detail/ordercheck/payment" element={<Paymnet />} />
+        <Route path="/product/cart" element={<Cart />} />
+        <Route path="/myaccount" element={<MyAccount />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/coupon" element={<Coupon />} />
+        <Route path="/Contactus" element={<Contactus />} />
+      </Routes>
+      {/* <Footer /> */}
+      {/* Conditionally render Footer */}
+      {!noHeaderFooterRoutes.includes(location.pathname) && <Footer />}
+    </MyContext.Provider>
   );
 }
 
